@@ -1,0 +1,6 @@
+echo "my 1st laptop"
+whoami
+df -H
+uname
+uptime
+hostname
