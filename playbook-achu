@@ -1,0 +1,14 @@
+- name: Execute command on all hosts
+  hosts: all
+  become: true
+  
+  tasks:
+   - name: Run command 
+     shell: echo -e "Hello hi all, my name is Archana and iam practicing devops ansible playbook.\nThis is our ansible playbook demo!"
+     register: command_output
+     
+   - name: save output to file
+     copy:
+       content: "{{command_output.stdout }}"      
+       dest: /tmp/command_output.txt
+~                                      
